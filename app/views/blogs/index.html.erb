@@ -1,0 +1,21 @@
+<% provide(:title, 'Blog一覧') %>
+<h1>Blog一覧</h1>
+
+<%= link_to "新規登録", new_blog_path, class: "btn btn-primary" %>
+
+<div class="row">
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th width="30%">タイトル</th>
+      <th width="50%">本文</th>
+      <th width="20%">作成日</th>
+    </tr>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.body %></td>
+        <td><%= blog.created_at %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

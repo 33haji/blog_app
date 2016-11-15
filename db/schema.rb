@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114013018) do
+ActiveRecord::Schema.define(version: 20161114015306) do
 
   create_table "blogs", force: :cascade do |t|
     t.text     "title"
     t.text     "body"
-    t.boolean  "delete_flag"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "delete_flag", default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end

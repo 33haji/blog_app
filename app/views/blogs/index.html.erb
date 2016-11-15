@@ -8,13 +8,17 @@
     <tr>
       <th width="30%">タイトル</th>
       <th width="50%">本文</th>
-      <th width="20%">作成日</th>
+      <th width="15%">作成日</th>
+      <th width="5%">変更<br>削除</th>
     </tr>
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.body %></td>
         <td><%= blog.created_at %></td>
+        <td>
+          <%= link_to "変更", edit_blog_path(blog) %><br>
+          <%= link_to "削除", delete_blog_path(blog), :method => 'patch'%>
       </tr>
     <% end %>
   </table>

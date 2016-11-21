@@ -2,11 +2,16 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: %w(edit update delete)
   
   def index
-    @blogs = Blog.where(delete_flag: false)
+    @q = Blog.ransack(params[:q])
+    blogs = @q.result.order(created_at: :desc)
     
-    if all_flag
-      @blogs = Blog.all
+    if !params[:q].nil? && params[:q][:delete_flag_eq] == 'true'
+      blogs = Blog.all.order(created_at: :desc)
+    elsif params[:q].nil?
+      blogs = Blog.where(delete_flag: false).order(created_at: :desc)
     end
+    
+    @blogs = blogs
   end
   
   def new

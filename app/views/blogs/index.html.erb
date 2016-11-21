@@ -53,7 +53,7 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
+        <td><%= markdown(blog.body).html_safe %></td>
         <td><%= blog.created_at.year %>年<%= blog.created_at.month %>月<%= blog.created_at.day %>日</td>
         <td>
           <%= link_to "変更", edit_blog_path(blog) %><br>

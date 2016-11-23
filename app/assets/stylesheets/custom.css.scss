@@ -60,3 +60,21 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+/* profile画面 */
+.jumbotron { 
+  color: $white;
+  background:url(backgroundImage.png) center no-repeat; 
+  background-size: cover;
+  .image-container {
+    text-align: center;
+    vertical-align: middle;
+    .profile-image {
+      max-width: 360px;
+      height: auto;
+    } 
+  }
+  .item {
+    padding-top: 20px;
+  }
+}

@@ -14,6 +14,7 @@ gem 'ransack'
 gem 'pry-byebug'
 gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

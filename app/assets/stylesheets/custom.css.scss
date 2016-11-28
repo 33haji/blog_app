@@ -67,6 +67,8 @@ body {
   background:url(backgroundImage.png) center no-repeat; 
   background-size: cover;
   .image-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     vertical-align: middle;
     .profile-image {
@@ -77,4 +79,26 @@ body {
   .item {
     padding-top: 20px;
   }
+}
+
+/* Blog詳細画面 */
+.show-title {
+  text-align: center;
+  font-family: Lato,'Open Sans','メイリオ',Meiryo;
+  border-top:1px solid #CCC;
+  border-bottom:1px solid #CCC;
+  padding: 10px 5px;
+}
+.show-body {
+  background: #EDEDED;
+}
+.show-image {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  vertical-align: middle;
+    .blog-image {
+      max-width: 700px;
+      height: auto;
+    } 
 }

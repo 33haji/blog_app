@@ -48,14 +48,21 @@
       <th width="30%">タイトル</th>
       <th width="50%">本文</th>
       <th width="15%">作成日</th>
-      <th width="5%">変更<br>削除</th>
+      <th width="5%">詳細<br>変更<br>削除</th>
     </tr>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= blog.title %></td>
+        <td>
+          <% if blog.persisted? && blog.image? %>
+            <strong><%= blog.title %></strong>
+          <% else %>
+            <%= blog.title %>
+          <% end %>
+        </td>
         <td><%= markdown(blog.body).html_safe %></td>
         <td><%= blog.created_at.year %>年<%= blog.created_at.month %>月<%= blog.created_at.day %>日</td>
         <td>
+          <%= link_to "詳細", blog_path(blog) %><br>
           <%= link_to "変更", edit_blog_path(blog) %><br>
           <%= link_to "削除", delete_blog_path(blog), :method => 'patch', data: {confirm: "本当に削除しますか？"}%>
       </tr>

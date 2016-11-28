@@ -8,7 +8,9 @@
 #  delete_flag :boolean          default(FALSE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  image       :string
 #
 
 class Blog < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
 end

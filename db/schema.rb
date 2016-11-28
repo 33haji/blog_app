@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114015306) do
+ActiveRecord::Schema.define(version: 20161128012754) do
 
   create_table "blogs", force: :cascade do |t|
     t.text     "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20161114015306) do
     t.boolean  "delete_flag", default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "image"
   end
 
 end

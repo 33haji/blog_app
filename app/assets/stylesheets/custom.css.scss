@@ -33,7 +33,7 @@ footer {
 
 /* body */
 body {
-  padding-top: 130px;
+  padding-top: 120px;
 }
 
 /* text-color */
@@ -62,22 +62,24 @@ body {
 }
 
 /* profile画面 */
-.jumbotron { 
-  color: $white;
-  background:url(backgroundImage.png) center no-repeat; 
-  background-size: cover;
-  .image-container {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-    vertical-align: middle;
-    .profile-image {
-      max-width: 360px;
-      height: auto;
-    } 
-  }
-  .item {
-    padding-top: 20px;
+.profile{
+  .jumbotron { 
+    color: $white;
+    background:url(backgroundImage.png) center no-repeat; 
+    background-size: cover;
+    .image-container {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: center;
+      vertical-align: middle;
+      .profile-image {
+        max-width: 360px;
+        height: auto;
+      } 
+    }
+    .item {
+      padding-top: 20px;
+    }
   }
 }
 
@@ -101,4 +103,24 @@ body {
       max-width: 700px;
       height: auto;
     } 
+}
+
+/* home画面 */
+.home{
+  .jumbotron { 
+    background:url(background_home.jpg) center no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+  }
+  .content{
+    padding: 15% 0 18% 0;
+    text-align: center;
+    h1 {
+      font-family: Lato,'Open Sans','メイリオ',Meiryo;
+      color: $white;
+      font-size: 36px;
+    }
+  }
 }

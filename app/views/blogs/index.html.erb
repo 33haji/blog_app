@@ -41,14 +41,16 @@
     </div>
   </div>
   
-  <%= link_to "新規登録", new_blog_path, class: "btn btn-primary" %>
+  <%= link_to "新規登録", new_blog_path, class: "btn btn-primary" %><br>
   
+  <%= page_entries_info @blogs %>
   <div class="row">
     <table class="table table-bordered table-striped">
       <tr>
         <th width="30%">タイトル</th>
         <th width="50%">本文</th>
-        <th width="15%">作成日</th>
+        <th width="5%">作業<br>時間</th>
+        <th width="10%">作成日</th>
         <th width="5%">詳細<br>変更<br>削除</th>
       </tr>
       <% @blogs.each do |blog| %>
@@ -61,6 +63,11 @@
             <% end %>
           </td>
           <td><%= markdown(blog.body).html_safe %></td>
+          <% if !@works.find_by(blog_id: blog.id).nil? %>
+            <td><%= @works.find_by(blog_id: blog.id).required_time %></td>
+          <% else %>
+            <td></td>
+          <% end %>
           <td><%= blog.created_at.year %>年<%= blog.created_at.month %>月<%= blog.created_at.day %>日</td>
           <td>
             <%= link_to "詳細", blog_path(blog) %><br>
@@ -70,4 +77,6 @@
       <% end %>
     </table>
   </div>
+  
+  <br><%= paginate @blogs %>
 </div>

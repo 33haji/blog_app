@@ -15,6 +15,7 @@ gem 'pry-byebug'
 gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 gem 'carrierwave'
+gem 'kaminari'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

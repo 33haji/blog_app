@@ -5,6 +5,11 @@
   <%= f.label :body, "本文"%>
   <%= f.text_area :body, class: 'form-control', size: "100x10" %>
   
+  <%= f.fields_for :work do |w| %>
+    <%= w.label :required_time, "作業時間" %>
+    <%= w.number_field :required_time, class: 'form-control' %>
+  <% end %>
+  
   <% if @blog.image? %>
     <div class="thumbnail">
       <%= image_tag @blog.image.url %>

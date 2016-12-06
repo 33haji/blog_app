@@ -5,10 +5,24 @@ class BlogsController < ApplicationController
     @q = Blog.ransack(params[:q])
     blogs = @q.result
     
-    if !params[:q].nil? && params[:q][:delete_flag_eq] == 'true'
-      blogs = Blog.all
-    elsif params[:q].nil?
-      blogs = Blog.where(delete_flag: false)
+    # 検索
+    if !params[:q].nil?
+      # "削除されたBlogを表示しない"にチェックが入っている場合
+      if params[:q][:delete_flag_check] == 'true'
+        blogs = blogs.where(delete_flag: false)
+      end
+    
+      # 作業時間のチェック
+      if !params[:q][:work][:condition].empty? && !params[:q][:work][:required_time_form].empty?
+        if params[:q][:work][:condition] == '1'
+          ids = Work.where(required_time: params[:q][:work][:required_time_form]).select(:blog_id)
+        elsif params[:q][:work][:condition] == '2'
+          ids = Work.where("required_time > ?", params[:q][:work][:required_time_form]).select(:blog_id)
+        elsif params[:q][:work][:condition] == '3'
+          ids = Work.where("required_time < ?", params[:q][:work][:required_time_form]).select(:blog_id)
+        end
+        blogs = blogs.where(id: ids)
+      end
     end
     
     @works = Work.all

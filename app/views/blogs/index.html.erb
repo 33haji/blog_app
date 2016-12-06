@@ -28,10 +28,21 @@
               <%= f.date_select :created_at_lt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %>
             </div>
           </div>
+          <%= f.fields_for :work do |w| %>
+            <div class="col-sm-12">
+              <div class="form-inline">
+                <br>
+                <%= w.label :required_time_form, "作業時間" %>
+                <%= w.number_field :required_time_form, class: "form-control" %>
+                <%= w.select :condition, [["=", 1], [">", 2], ["<", 3]], :include_blank => true %>
+              </div>
+            </div>
+          <% end %>
           <div class="col-sm-12">
             <div class="form-inline">
-              <%= f.label :delete_flag, "削除されたBlogを表示しない" %>
-              <%= f.check_box :delete_flag_eq, {:checked => true}, false, true %>
+              <br>
+              <%= f.label :delete_flag_check, "削除されたBlogを表示しない" %>
+              <%= f.check_box :delete_flag_check, {:checked => true}, true, false %>
             </div>
           </div>
         </div>

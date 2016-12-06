@@ -14,6 +14,8 @@
 class Blog < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   
+  attr_accessor :delete_flag_check
+  
   has_one :work
   accepts_nested_attributes_for :work
 end

@@ -11,4 +11,6 @@
 
 class Work < ActiveRecord::Base
   belongs_to :blog, foreign_key: :blog_id
+  
+  attr_accessor :required_time_form, :condition
 end

@@ -18,6 +18,9 @@ header {
       color: $white;
     }
   }
+  .dropdown:hover > .dropdown-menu{
+  display: block;
+  }
 }
 
 /* footer */

@@ -16,6 +16,8 @@ gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'chartkick'
+gem 'by_star'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

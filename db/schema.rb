@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205020130) do
+ActiveRecord::Schema.define(version: 20170126141636) do
 
   create_table "blogs", force: :cascade do |t|
     t.text     "title"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20161205020130) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "image"
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.text     "title"
+    t.text     "detail"
+    t.string   "type"
+    t.boolean  "delete_flag"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "works", force: :cascade do |t|

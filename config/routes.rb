@@ -5,6 +5,14 @@ Rails.application.routes.draw do
     get :index
   end
   
+  namespace :analysis do
+    get :required_time
+  end
+  
+  resources :tips do
+    patch 'delete', :on => :member
+  end
+  
   resources :blogs do
     patch 'delete', :on => :member
   end

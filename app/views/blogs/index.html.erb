@@ -54,7 +54,7 @@
   
   <%= link_to "新規登録", new_blog_path, class: "btn btn-primary" %><br>
   
-  <%= page_entries_info @blogs %>
+  <%= page_entries_info @blogs %><br><%= paginate @blogs %>
   <div class="row">
     <table class="table table-bordered table-striped">
       <tr>

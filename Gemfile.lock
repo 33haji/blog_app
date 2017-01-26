@@ -46,6 +46,8 @@ GEM
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
     builder (3.2.2)
+    by_star (2.2.1)
+      activesupport
     byebug (3.4.0)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
@@ -56,6 +58,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    chartkick (2.2.1)
     coderay (1.1.1)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -229,8 +232,10 @@ PLATFORMS
 DEPENDENCIES
   annotate (>= 2.6.0)
   bootstrap-sass (= 3.2.0.0)
+  by_star
   byebug (= 3.4.0)
   carrierwave
+  chartkick
   coderay
   coffee-rails (= 4.1.0)
   guard-minitest (= 2.3.1)

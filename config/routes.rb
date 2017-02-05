@@ -17,4 +17,10 @@ Rails.application.routes.draw do
     patch 'delete', :on => :member
   end
   
+  resources :tip_genres
+  
+  namespace :manage do
+    get :table_list
+    get :column_list
+  end
 end

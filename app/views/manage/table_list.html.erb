@@ -1,0 +1,20 @@
+<% provide(:title, 'Tables') %>
+<div class="container">
+  <h1>Table一覧</h1>
+  
+  <div class="row">
+    <table class="table table-bordered table-striped" style="margin-top: 30px;">
+      <tr>
+        <th width="100%">テーブル名</th>
+      </tr>
+      <% @table_list.each do |table| %>
+        <tr>
+          <td>
+            <%= link_to table, manage_column_list_path, table: table.singularize %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  
+</div>

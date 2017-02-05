@@ -16,6 +16,7 @@ gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'kaminari-bootstrap'
 gem 'chartkick'
 gem 'by_star'
 

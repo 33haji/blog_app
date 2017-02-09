@@ -23,4 +23,10 @@ Rails.application.routes.draw do
     get :table_list
     get :column_list
   end
+  
+  namespace :sns do
+    get :index
+    get :show_tweet
+    get :show_instagram
+  end
 end

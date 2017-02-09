@@ -19,6 +19,8 @@ gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'chartkick'
 gem 'by_star'
+gem 'twitter'
+gem 'instagram', :git => 'git://github.com/Instagram/instagram-ruby-gem.git'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
